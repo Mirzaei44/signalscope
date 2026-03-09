@@ -10,38 +10,21 @@ The platform combines automated news ingestion, topic detection, trend scoring, 
 
 ## Screenshots
 
-<p align="center">
-  <img src="assets/dashboard.png" alt="Dashboard" width="90%">
-</p>
-<p align="center"><em>Main dashboard showing trending topics and live article feed.</em></p>
+### Dashboard
+![Dashboard](assets/dashboard.png)
 
----
+### Login
+![Alerts](assets/login.png)
 
-<p align="center">
-  <img src="assets/login.png" alt="Login Page" width="90%">
-</p>
-<p align="center"><em>User authentication interface.</em></p>
+### Topic & Detail
+![Topic_Detail](assets/topics_details.png)
 
----
+### Alerts Center
+![Alerts](assets/alerts.png)
 
-<p align="center">
-  <img src="assets/topics_details.png" alt="Topic Detail" width="90%">
-</p>
-<p align="center"><em>Topic exploration with related articles.</em></p>
-
----
-
-<p align="center">
-  <img src="assets/alerts.png" alt="Alerts Center" width="90%">
-</p>
-<p align="center"><em>Alert center showing user notifications.</em></p>
-
----
-
-<p align="center">
-  <img src="assets/articles.png" alt="Latest Articles Feed" width="90%">
-</p>
-<p align="center"><em>Latest articles aggregated from monitored sources.</em></p>
+### Articles 
+![Alerts](assets/articles.png)
+⸻
 
 Features
 
