@@ -1,201 +1,130 @@
-SignalScope
+# SignalScope
 
 A full-stack platform for monitoring emerging news topics and exploring related coverage in real time.
 
-SignalScope collects news from multiple RSS feeds, extracts topics from articles, tracks topic momentum, and presents the results in a clean dashboard designed for quick exploration.
+SignalScope collects articles from RSS feeds, extracts topics, tracks topic momentum, and provides a clean dashboard for exploring news signals.
 
-The platform combines automated news ingestion, topic detection, trend scoring, and a modern frontend interface to create a lightweight news intelligence system.
+---
 
-⸻
+# Screenshots
 
-## Screenshots
+## Dashboard
 
-### Dashboard
-![Dashboard](assets/dashboard.png)
+<p align="center">
+<img src="assets/dashboard.png" width="90%">
+</p>
 
-### Login
-![Alerts](assets/login.png)
+## Login
 
-### Topic & Detail
-![Topic_Detail](assets/topics_details.png)
+<p align="center">
+<img src="assets/login.png" width="90%">
+</p>
 
-### Alerts Center
-![Alerts](assets/alerts.png)
+## Topic & Detail
 
-### Articles 
-![Alerts](assets/articles.png)
-⸻
+<p align="center">
+<img src="assets/topics_details.png" width="90%">
+</p>
 
-Features
+## Alerts Center
 
-Live News Aggregation
+<p align="center">
+<img src="assets/alerts.png" width="90%">
+</p>
 
-The system collects articles from external RSS feeds and stores them in the database with metadata such as title, publication time, source, and image.
+## Articles Feed
 
-Topic Detection
+<p align="center">
+<img src="assets/articles.png" width="90%">
+</p>
 
-Topics are extracted from incoming articles and grouped to identify emerging themes across multiple news sources.
+---
 
-Trending Topic Ranking
+# Features
 
-Each topic is assigned a trend score based on article frequency and recency. Topics are ranked to highlight the most active stories.
+- RSS news ingestion
+- Topic detection from articles
+- Trending topic ranking
+- Topic exploration with related articles
+- Latest article feed
+- User authentication (JWT)
+- Saved topics
+- Topic alerts
+- Cached API responses
 
-Topic Exploration
+---
 
-Users can select a topic to view related articles and follow coverage across sources.
-
-Latest Article Feed
-
-A continuously updated feed of the most recent articles across all monitored sources.
-
-User Authentication
-
-Secure login system using JWT authentication. Users can access personalized features once logged in.
-
-Saved Topics
-
-Users can bookmark topics they want to follow later.
-
-Alerts
-
-Users receive alerts when monitored topics become active or trending.
-
-Caching
-
-Frequently requested endpoints are cached to improve performance and reduce database load.
-
-⸻
-
-System Overview
-
-SignalScope consists of three main layers:
-
-1. News Ingestion
-
-RSS feeds are periodically fetched and stored as articles.
-
-2. Topic Processing
-
-Articles are analyzed to extract and group topics. Topics accumulate articles and are ranked by activity.
-
-3. API + Frontend
-
-The Django REST API exposes the data, and the React dashboard provides an interface for exploring topics and articles.
-
-⸻
-
-Architecture
+# Architecture
 
 RSS Feeds
-    │
-    ▼
+↓
 Article Ingestion
-    │
-    ▼
-Topic Extraction
-    │
-    ▼
+↓
+Topic Detection
+↓
 Trend Scoring
-    │
-    ▼
+↓
 Django REST API
-    │
-    ▼
+↓
 React Dashboard
 
+---
 
-⸻
+# Tech Stack
 
-Technology Stack
+### Backend
+- Python
+- Django
+- Django REST Framework
+- PostgreSQL / SQLite
+- Redis
+- Celery
+- Docker
 
-Backend
-	•	Python
-	•	Django
-	•	Django REST Framework
-	•	JWT Authentication
-	•	PostgreSQL / SQLite
-	•	RSS parsing
-	•	Django caching
+### Frontend
+- React
+- Axios
+- TailwindCSS
 
-Frontend
-	•	React
-	•	React Router
-	•	Axios
-	•	TailwindCSS
+---
 
-Infrastructure
-	•	Docker
-	•	Docker Compose
+# API Endpoints
 
-⸻
-
-API Overview
-
-Topics
+### Topics
 
 GET /api/signals/topics/
-
-Returns trending topics ranked by activity.
-
 GET /api/signals/topics/<topic_name>/
 
-Returns detailed information about a specific topic including related articles.
-
-⸻
-
-Articles
+### Articles
 
 GET /api/news/articles/
 
-Returns the latest ingested articles.
-
-⸻
-
-Authentication
+### Authentication
 
 POST /api/auth/login/
 POST /api/auth/register/
 
-JWT tokens are used for authenticated endpoints.
-
-⸻
-
-Saved Topics
+### Saved Topics
 
 GET /api/auth/saved-topics/
 POST /api/auth/saved-topics/
-DELETE /api/auth/saved-topics/<id>/
+DELETE /api/auth/saved-topics//
 
-
-⸻
-
-Alerts
+### Alerts
 
 GET /api/alerts/
-PATCH /api/alerts/<id>/
+PATCH /api/alerts//
 
-Alerts notify users about important topic activity.
+---
 
-⸻
+# Running the Project
 
-Running the Project
+Clone the repository:
 
-Clone the repository
-
-git clone https://github.com/yourusername/signalscope.git
+git clone https://github.com/Mirzaei44/signalscope.git
 cd signalscope
 
-
-⸻
-
-Backend setup
-
-Create a virtual environment:
-
-python -m venv venv
-source venv/bin/activate
-
-Install dependencies:
+Install backend dependencies:
 
 pip install -r requirements.txt
 
@@ -203,77 +132,41 @@ Run migrations:
 
 python manage.py migrate
 
-Start the backend:
+Start backend:
 
 python manage.py runserver
 
-
-⸻
-
-Frontend setup
-
-Navigate to the frontend directory:
+Frontend:
 
 cd frontend
-
-Install dependencies:
-
 npm install
+npm run dev
 
-Start the development server:
+---
 
-npm start
+# Project Structure
 
-
-⸻
-
-Environment Variables
-
-Create a .env file if needed.
-
-Example:
-
-SECRET_KEY=your_secret_key
-DEBUG=True
-
-
-⸻
-
-Project Structure
-
-signalscope/
+signalscope
 │
-├── accounts/
-├── alerts/
-├── news/
-├── signals/
+├── accounts
+├── alerts
+├── ingestion
+├── news
+├── signals
 │
-├── frontend/
+├── frontend
+│
+├── assets
 │
 ├── docker-compose.yml
+├── Dockerfile
 ├── requirements.txt
 └── README.md
 
+---
 
-⸻
+# Purpose
 
-Possible Future Improvements
+SignalScope explores how automated news ingestion and topic detection can power a lightweight news intelligence dashboard.
 
-Some ideas for extending the platform:
-	•	WebSocket real-time alerts
-	•	Advanced topic extraction using NLP
-	•	Topic clustering and entity recognition
-	•	Email notifications
-	•	User dashboards for tracked topics
-	•	Scheduled ingestion workers
-
-⸻
-
-Purpose
-
-SignalScope was built as a full-stack project exploring how automated news ingestion and topic detection can power a lightweight intelligence dashboard.
-
-The project demonstrates backend architecture, API design, data processing, and frontend integration within a single system.
-
-
-
+The project demonstrates backend architecture, API design, background processing, and frontend integration.
