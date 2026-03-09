@@ -9,19 +9,19 @@ SignalScope
 <br/>
 
 
-<img src="assets/topic-detail.png" width="1000" />
+<img src="assets/topics-details.png" width="1000" />
 
 
 <br/>
 
 
-<img src="assets/articles-feed.png" width="1000" />
+<img src="assets/articles.png" width="1000" />
 
 
 <br/>
 
 
-<img src="assets/alerts-center.png" width="1000" />
+<img src="assets/alerts.png" width="1000" />
 
 
 <br/>
