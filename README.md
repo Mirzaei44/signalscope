@@ -1,172 +1,257 @@
-# SignalScope
+SignalScope
 
-A full-stack platform for monitoring emerging news topics and exploring related coverage in real time.
+<div align="center">
 
-SignalScope collects articles from RSS feeds, extracts topics, tracks topic momentum, and provides a clean dashboard for exploring news signals.
 
----
+<img src="assets/dashboard.png" width="1000" />
 
-# Screenshots
 
-## Dashboard
+<br/>
 
-<p align="center">
-<img src="assets/dashboard.png" width="90%">
-</p>
 
-## Login
+<img src="assets/topic-detail.png" width="1000" />
 
-<p align="center">
-<img src="assets/login.png" width="90%">
-</p>
 
-## Topic & Detail
+<br/>
 
-<p align="center">
-<img src="assets/topics_details.png" width="90%">
-</p>
 
-## Alerts Center
+<img src="assets/articles-feed.png" width="1000" />
 
-<p align="center">
-<img src="assets/alerts.png" width="90%">
-</p>
 
-## Articles Feed
+<br/>
 
-<p align="center">
-<img src="assets/articles.png" width="90%">
-</p>
 
----
+<img src="assets/alerts-center.png" width="1000" />
 
-# Features
 
-- RSS news ingestion
-- Topic detection from articles
-- Trending topic ranking
-- Topic exploration with related articles
-- Latest article feed
-- User authentication (JWT)
-- Saved topics
-- Topic alerts
-- Cached API responses
+<br/>
 
----
 
-# Architecture
+<img src="assets/login.png" width="1000" />
+
+
+</div>
+
+
+
+⸻
+
+SignalScope
+
+SignalScope is a full-stack platform for monitoring emerging news topics and exploring related coverage in real time.
+
+The system ingests articles from RSS feeds, extracts topics from those articles, calculates topic momentum, and exposes the results through a clean API and interactive web dashboard.
+
+It demonstrates how automated ingestion, background processing, and modern frontend tooling can be combined to build a lightweight news intelligence system.
+
+⸻
+
+Screenshots
+
+Dashboard
+
+A real-time overview of trending topics detected across incoming news articles.
+
+Topic Detail
+
+View a specific topic, explore related coverage, and follow its momentum over time.
+
+Articles Feed
+
+Browse the latest articles collected by the ingestion pipeline.
+
+Alerts Center
+
+Manage alerts and notifications for topics you want to track.
+
+Authentication
+
+Simple login and registration flow using JWT authentication.
+
+⸻
+
+Features
+	•	RSS news ingestion pipeline
+	•	Automatic topic extraction from articles
+	•	Trending topic detection and ranking
+	•	Topic exploration with related articles
+	•	Latest article feed
+	•	User authentication with JWT
+	•	Saved topics
+	•	Topic alerts and notifications
+	•	Cached API responses for performance
+	•	Dockerized development environment
+
+⸻
+
+Architecture
+
+SignalScope follows a pipeline architecture designed for continuous ingestion and processing of news data.
 
 RSS Feeds
-↓
-Article Ingestion
-↓
+     ↓
+Article Ingestion (Celery Workers)
+     ↓
 Topic Detection
-↓
+     ↓
 Trend Scoring
-↓
+     ↓
 Django REST API
-↓
+     ↓
 React Dashboard
 
----
+Key components:
 
-# Tech Stack
+Ingestion Layer
+	•	Fetches RSS feeds
+	•	Parses and stores new articles
 
-### Backend
-- Python
-- Django
-- Django REST Framework
-- PostgreSQL / SQLite
-- Redis
-- Celery
-- Docker
+Processing Layer
+	•	Extracts topics from articles
+	•	Calculates trending scores
 
-### Frontend
-- React
-- Axios
-- TailwindCSS
+API Layer
+	•	Exposes topics, articles, and alerts through REST endpoints
 
----
+Frontend
+	•	Interactive dashboard for exploring topics and articles
 
-# API Endpoints
+⸻
 
-### Topics
+Tech Stack
+
+Backend
+	•	Python
+	•	Django
+	•	Django REST Framework
+	•	Celery
+	•	Redis
+	•	PostgreSQL / SQLite
+	•	Docker
+
+Frontend
+	•	React
+	•	Axios
+	•	TailwindCSS
+
+⸻
+
+API Overview
+
+Topics
 
 GET /api/signals/topics/
 GET /api/signals/topics/<topic_name>/
 
-### Articles
+Returns trending topics and detailed information for a specific topic.
+
+⸻
+
+Articles
 
 GET /api/news/articles/
 
-### Authentication
+Returns the latest articles collected by the ingestion pipeline.
+
+⸻
+
+Authentication
 
 POST /api/auth/login/
 POST /api/auth/register/
 
-### Saved Topics
+JWT-based authentication for accessing user features.
 
-GET /api/auth/saved-topics/
-POST /api/auth/saved-topics/
-DELETE /api/auth/saved-topics//
+⸻
 
-### Alerts
+Saved Topics
 
-GET /api/alerts/
-PATCH /api/alerts//
+GET    /api/auth/saved-topics/
+POST   /api/auth/saved-topics/
+DELETE /api/auth/saved-topics/<id>/
 
----
+Allows users to follow topics of interest.
 
-# Running the Project
+⸻
 
-Clone the repository:
+Alerts
+
+GET   /api/alerts/
+PATCH /api/alerts/<id>/
+
+Manage topic alerts and notification settings.
+
+⸻
+
+Running the Project
+
+1. Clone the repository
 
 git clone https://github.com/Mirzaei44/signalscope.git
 cd signalscope
 
-Install backend dependencies:
+
+⸻
+
+2. Install backend dependencies
 
 pip install -r requirements.txt
 
-Run migrations:
+
+⸻
+
+3. Run database migrations
 
 python manage.py migrate
 
-Start backend:
+
+⸻
+
+4. Start the backend
 
 python manage.py runserver
 
-Frontend:
+
+⸻
+
+5. Run the frontend
 
 cd frontend
 npm install
 npm run dev
 
----
 
-# Project Structure
+⸻
+
+Project Structure
 
 signalscope
 │
-├── accounts
-├── alerts
-├── ingestion
-├── news
-├── signals
+├── accounts/        # Authentication & user management
+├── alerts/          # Alert and notification system
+├── ingestion/       # RSS ingestion pipeline
+├── news/            # Article models and API
+├── signals/         # Topic extraction and trending logic
 │
-├── frontend
-│
-├── assets
+├── frontend/        # React frontend
+├── assets/          # Project screenshots
 │
 ├── docker-compose.yml
 ├── Dockerfile
 ├── requirements.txt
+├── manage.py
 └── README.md
 
----
 
-# Purpose
+⸻
+
+Purpose
 
 SignalScope explores how automated news ingestion and topic detection can power a lightweight news intelligence dashboard.
 
-The project demonstrates backend architecture, API design, background processing, and frontend integration.
+The project demonstrates:
+	•	backend system design
+	•	asynchronous processing with Celery
+	•	REST API architecture
+	•	frontend-backend integration
+	•	containerized development workflows
