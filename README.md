@@ -1,4 +1,4 @@
-SignalScope
+# SignalScope
 ## Screenshots
 
 ### Dashboard
@@ -14,9 +14,9 @@ SignalScope
 ![Alerts](assets/alerts.png)
 
 ### Login
-![Login](assets/Login.png)
+![Login](assets/login.png)
 
-⸻
+----
 
 SignalScope
 
