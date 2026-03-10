@@ -1,38 +1,20 @@
 SignalScope
+## Screenshots
 
-<div align="center">
+### Dashboard
+![Dashboard](assets/dashboard.png)
 
+### Topics & Details
+![Topics](assets/topics-details.png)
 
-<img src="assets/dashboard.png" width="1000" />
+### Articles
+![Articles](assets/articles.png)
 
+### Alerts
+![Alerts](assets/alerts.png)
 
-<br/>
-
-
-<img src="assets/topics-details.png" width="1000" />
-
-
-<br/>
-
-
-<img src="assets/articles.png" width="1000" />
-
-
-<br/>
-
-
-<img src="assets/alerts.png" width="1000" />
-
-
-<br/>
-
-
-<img src="assets/login.png" width="1000" />
-
-
-</div>
-
-
+### Login
+![Login](assets/login.png)
 
 ⸻
 
