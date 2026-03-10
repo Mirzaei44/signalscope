@@ -5,7 +5,7 @@ SignalScope
 ![Dashboard](assets/dashboard.png)
 
 ### Topics & Details
-![Topics](assets/topics-details.png)
+![Topics](assets/topics_details.png)
 
 ### Articles
 ![Articles](assets/articles.png)
@@ -14,7 +14,7 @@ SignalScope
 ![Alerts](assets/alerts.png)
 
 ### Login
-![Login](assets/login.png)
+![Login](assets/Login.png)
 
 ⸻
 
