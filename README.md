@@ -14,7 +14,7 @@
 ![Alerts](assets/alerts.png)
 
 ### Login
-![Login](assets/login.png)
+![Login](assets/Login.png)
 
 ----
 
