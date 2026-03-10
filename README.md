@@ -5,7 +5,7 @@
 ![Dashboard](assets/dashboard.png)
 
 ### Topics & Details
-![Topics](assets/topics_details.png)
+![Topics](assets/topic_details.png)
 
 ### Articles
 ![Articles](assets/articles.png)
